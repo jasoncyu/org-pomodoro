@@ -98,7 +98,7 @@ Use `org-pomodoro-start-sound' to determine what sound that should be."
 
 (defcustom org-pomodoro-start-sound (when load-file-name
                                       (concat (file-name-directory load-file-name)
-                                              "resources/bell.wav"))
+                                              "resources/marine_gogogo.wav"))
   "The path to a sound file that´s to be played when a pomodoro is started."
   :group 'org-pomodoro
   :type 'file)
@@ -119,7 +119,7 @@ Use `org-pomodoro-finished-sound' to determine what sound that should be."
 
 (defcustom org-pomodoro-finished-sound (when load-file-name
                                          (concat (file-name-directory load-file-name)
-                                                 "resources/bell.wav"))
+                                                 "resources/reap_the_whirlwind.wav"))
   "The path to a sound file that´s to be played when a pomodoro was finished."
   :group 'org-pomodoro
   :type 'file)
@@ -295,7 +295,7 @@ Run before a break's specific hook.")
 (defvar org-pomodoro-state :none
   "The current state of `org-pomodoro`.
 It changes to :pomodoro when starting a pomodoro and to :longbreak
-or :break when starting a break.")
+or :break when tarting a break.")
 
 (defvar org-pomodoro-count 0
   "The number of pomodoros since the last long break.")
@@ -557,6 +557,8 @@ kill the current timer, this may be a break or a running pomodoro."
           (call-interactively 'org-clock-in))))
     (org-pomodoro-start :pomodoro)))
 
+(message "loaded custom org-pomodoro")
 (provide 'org-pomodoro)
+
 
 ;;; org-pomodoro.el ends here
